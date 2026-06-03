@@ -1,4 +1,10 @@
 terraform {
+  backend "s3" {
+    bucket = "testk8sdemo-"
+    key    = "k8s/demo/terraform.tfstate"
+    region = "eu-central-1"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

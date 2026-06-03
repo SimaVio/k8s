@@ -44,13 +44,13 @@ jobs:
         working-directory: terraform
         run: |
           terraform plan \
-            -var="bucket_name=my-unique-bucket-123456-soparla"
+            -var="bucket_name=my-unique-bucket-123456-soparla2"
 
       - name: Terraform Apply
         working-directory: terraform
         run: |
           terraform apply -auto-approve \
-            -var="bucket_name=my-unique-bucket-123456-soparla"
+            -var="bucket_name=my-unique-bucket-123456-soparla2"
 
       - name: List AWS S3 buckets
         run: aws s3 ls
