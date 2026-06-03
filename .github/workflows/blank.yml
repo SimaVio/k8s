@@ -54,3 +54,19 @@ jobs:
 
       - name: List AWS S3 buckets
         run: aws s3 ls
+      - name: Check installed tools
+        run: |
+          check() {
+            command -v $1 >/dev/null 2>&1 && echo "✔ $1 found" || echo "❌ $1 missing"
+          }
+
+          check kubectl
+          check helm
+          check terraform
+          check aws
+          check az
+          check docker
+          check git
+          check jq
+          check yq
+          check gh
