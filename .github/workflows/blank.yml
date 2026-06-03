@@ -25,3 +25,6 @@ jobs:
 
       - name: List services
         run: kubectl get svc -A
+
+      - name: List AWS S3 buckets
+        run: aws s3 ls
