@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "testk8sdemo-"
+    bucket = "testk8sdemo"
     key    = "k8s/demo/terraform.tfstate"
     region = "eu-central-1"
   }
