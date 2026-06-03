@@ -70,3 +70,4 @@ jobs:
           check jq
           check yq
           check gh
+
