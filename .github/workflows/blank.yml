@@ -44,10 +44,10 @@ jobs:
         working-directory: terraform
         run: |
           terraform plan \
-            -var="bucket_name=my-unique-bucket-123456"
+            -var="bucket_name=my-unique-bucket-123456-soparla"
 
       - name: Terraform Apply
         working-directory: terraform
         run: |
           terraform apply -auto-approve \
-            -var="bucket_name=my-unique-bucket-123456"
+            -var="bucket_name=my-unique-bucket-123456-soparla"
