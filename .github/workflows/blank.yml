@@ -28,3 +28,26 @@ jobs:
 
       - name: List AWS S3 buckets
         run: aws s3 ls
+
+      # -------------------------
+      # TERRAFORM SECTION
+      # -------------------------
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        working-directory: terraform
+        run: |
+          terraform plan \
+            -var="bucket_name=my-unique-bucket-123456"
+
+      - name: Terraform Apply
+        working-directory: terraform
+        run: |
+          terraform apply -auto-approve \
+            -var="bucket_name=my-unique-bucket-123456"
